@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Builder
 public class RequestDto {
-  @NotBlank private String firstName;
-  @NotBlank private String lastName;
-  @NotNull private Integer age;
+  @NotBlank(message = "First name must not be empty.") private String firstName;
+  @NotBlank(message = "Last name must not be empty.") private String lastName;
+  @NotNull(message = "Age must not be null.") private Integer age;
 }

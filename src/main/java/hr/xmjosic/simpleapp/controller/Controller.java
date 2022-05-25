@@ -6,6 +6,8 @@ import hr.xmjosic.simpleapp.service.DummyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
@@ -15,7 +17,7 @@ public class Controller {
   private final DummyService dummyService;
 
   @PostMapping("/post-request")
-  public ResponseDto postRequest(@RequestBody RequestDto requestDto) {
+  public ResponseDto postRequest(@Valid @RequestBody RequestDto requestDto) {
     return dummyService.execute(requestDto);
   }
 }
