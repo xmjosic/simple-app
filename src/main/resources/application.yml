@@ -1,0 +1,6 @@
+simple-app:
+  config:
+    async:
+      corePoolSize: 2
+      maxPoolSize: 2
+      queueCapacity: 50
