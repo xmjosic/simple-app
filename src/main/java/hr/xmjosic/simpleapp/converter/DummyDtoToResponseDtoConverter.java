@@ -9,6 +9,6 @@ import static hr.xmjosic.simpleapp.dto.StatusEnum.CREATED;
 public class DummyDtoToResponseDtoConverter implements Converter<DummyDto, ResponseDto> {
   @Override
   public ResponseDto convert(DummyDto source) {
-    return ResponseDto.builder().id(source.getId()).status(CREATED).build();
+    return ResponseDto.builder().id(source.id()).status(CREATED).build();
   }
 }

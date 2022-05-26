@@ -23,6 +23,6 @@ class SimpleAppApplicationTests {
 
     Assertions.assertThat(result)
         .isNotNull()
-        .matches(responseDto -> nonNull(responseDto.getId()) && nonNull(responseDto.getStatus()));
+        .matches(responseDto -> nonNull(responseDto.id()) && nonNull(responseDto.status()));
   }
 }

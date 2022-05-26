@@ -12,8 +12,8 @@ public class RequestDtoToDummyDtoConverter implements Converter<RequestDto, Dumm
   public DummyDto convert(RequestDto source) {
     return DummyDto.builder()
         .id(UUID.randomUUID().toString())
-        .fullName(source.getFirstName().concat(source.getLastName()))
-        .birthYear(LocalDate.now().getYear() - source.getAge())
+        .fullName(source.firstName().concat(source.lastName()))
+        .birthYear(LocalDate.now().getYear() - source.age())
         .build();
   }
 }

@@ -1,6 +1,5 @@
 package hr.xmjosic.simpleapp.config;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,6 @@ import java.util.concurrent.Executor;
     name = "simple-app.config.async.enabled",
     havingValue = "true",
     matchIfMissing = true)
-@RequiredArgsConstructor
 public class AsyncConfig {
 
   public static final String simpleAppAsyncExecutor = "simpleAppAsyncExecutor";
@@ -25,9 +23,9 @@ public class AsyncConfig {
   @Bean(simpleAppAsyncExecutor)
   public Executor executor(AsyncProperties properties) {
     ThreadPoolTaskExecutor retVal = new ThreadPoolTaskExecutor();
-    retVal.setCorePoolSize(properties.getCorePoolSize());
-    retVal.setMaxPoolSize(properties.getMaxPoolSize());
-    retVal.setQueueCapacity(properties.getQueueCapacity());
+    retVal.setCorePoolSize(properties.corePoolSize());
+    retVal.setMaxPoolSize(properties.maxPoolSize());
+    retVal.setQueueCapacity(properties.queueCapacity());
     return retVal;
   }
 }
